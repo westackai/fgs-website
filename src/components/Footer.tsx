@@ -4,12 +4,22 @@ import { Input } from "@/components/ui/input";
 
 const Footer = () => {
   const links = {
-    explore: ["About Us", "Services", "Projects", "Blog", "Contact"],
-    resources: ["FAQs", "Pricing", "Documentation", "Support", "Privacy Policy"],
+    explore: [
+      "About Us",
+      "Products",
+      "Technology",
+      "Services",
+      "Projects",
+      "Contact",
+    ],
+    resources: [
+      "Teams of Service",
+      "Privacy Policy",
+    ],
     contact: {
-      email: "hello@aglora.com",
-      phone: "+1 (555) 123-4567",
-      address: "123 Farm Road, Green Valley, CA 90210",
+      email: "info@freshgrainspices.com",
+      phone: "+91 98765 43210",
+      address: "123 Industrial Area, Nagpur, MH",
     },
   };
 
@@ -28,12 +38,14 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">A</span>
+                <span className="text-primary-foreground font-bold text-sm">
+                  F
+                </span>
               </div>
-              <span className="text-xl font-bold">Aglora</span>
+              <span className="text-xl font-bold">Fresh Grain and Spices</span>
             </div>
             <p className="text-primary-foreground/70 text-sm mb-4">
-              Empowering farms with sustainable solutions for a greener tomorrow.
+              Delivering premium quality processed pulses to the world.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (
@@ -54,7 +66,10 @@ const Footer = () => {
             <ul className="space-y-2">
               {links.explore.map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm">
+                  <a
+                    href="#"
+                    className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
+                  >
                     {link}
                   </a>
                 </li>
@@ -68,7 +83,10 @@ const Footer = () => {
             <ul className="space-y-2">
               {links.resources.map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm">
+                  <a
+                    href="#"
+                    className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
+                  >
                     {link}
                   </a>
                 </li>
@@ -80,11 +98,12 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Stay Updated</h4>
             <p className="text-primary-foreground/70 text-sm mb-4">
-              Subscribe to our newsletter for the latest organic farming insights.
+              Subscribe to our newsletter for the latest organic farming
+              insights.
             </p>
             <div className="flex gap-2">
-              <Input 
-                type="email" 
+              <Input
+                type="email"
                 placeholder="Enter your email"
                 className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
               />
@@ -97,11 +116,21 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/60 text-sm">
-            © 2024 Aglora. All rights reserved.
+            © 2024 Fresh Grain and Spices. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-primary-foreground/60">
-            <a href="#" className="hover:text-primary-foreground transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-primary-foreground transition-colors">Privacy Policy</a>
+            <a
+              href="#"
+              className="hover:text-primary-foreground transition-colors"
+            >
+              Terms of Service
+            </a>
+            <a
+              href="#"
+              className="hover:text-primary-foreground transition-colors"
+            >
+              Privacy Policy
+            </a>
           </div>
         </div>
       </div>

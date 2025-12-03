@@ -1,22 +1,31 @@
-import { Check, Leaf, HeartHandshake, Globe } from "lucide-react";
+import { Award, Users, Leaf, Zap } from "lucide-react";
 import farmersTeam from "@/assets/farmers-team.jpg";
 
 const DependableServices = () => {
   const features = [
     {
+      icon: Zap,
+      title: "Modern Machinery",
+      description:
+        "Equipped with the latest sorting and polishing technology for superior grain quality.",
+    },
+    {
+      icon: Users,
+      title: "Skilled Team",
+      description:
+        "A dedicated team of experts ensuring precision and hygiene in every batch processed.",
+    },
+    {
       icon: Leaf,
-      title: "Eco-Friendly Focus",
-      description: "All our solutions prioritize environmental sustainability and long-term soil health.",
+      title: "Environmental Responsibility",
+      description:
+        "Committed to sustainable practices with zero-waste processing and energy efficiency.",
     },
     {
-      icon: HeartHandshake,
-      title: "Expert Support",
-      description: "24/7 access to our team of agricultural experts and certified organic consultants.",
-    },
-    {
-      icon: Globe,
-      title: "Global Outreach",
-      description: "Connecting local farms with international organic markets and distribution networks.",
+      icon: Award,
+      title: "Certified Quality",
+      description:
+        "ISO 9001:2015 and FSSAI certified, guaranteeing food safety and international standards.",
     },
   ];
 
@@ -25,9 +34,11 @@ const DependableServices = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+              Why Choose Us
+            </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-8">
-              Dependable Services for Organic Farming Progress
+              Your Trusted Partner in Grain Processing
             </h2>
 
             <div className="space-y-6">
@@ -37,8 +48,12 @@ const DependableServices = () => {
                     <feature.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">{feature.title}</h3>
-                    <p className="text-muted-foreground text-sm">{feature.description}</p>
+                    <h3 className="font-semibold text-foreground mb-1">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -47,9 +62,9 @@ const DependableServices = () => {
 
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img 
-                src={farmersTeam} 
-                alt="Sustainable farming practices" 
+              <img
+                src={farmersTeam}
+                alt="Sustainable farming practices"
                 className="w-full h-auto object-cover"
               />
             </div>

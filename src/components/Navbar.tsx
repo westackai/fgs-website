@@ -7,10 +7,11 @@ const Navbar = () => {
 
   const navLinks = [
     { label: "Home", href: "#" },
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
+    { label: "About Us", href: "#about" },
+    { label: "Products", href: "#products" },
+    { label: "Technology", href: "#technology" },
     { label: "Projects", href: "#projects" },
-    { label: "Blog", href: "#blog" },
+    { label: "Contact", href: "#contact" },
   ];
 
   return (
@@ -18,10 +19,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">A</span>
+            <div className="rounded-full flex items-center justify-center">
+              <img src="/logo.png" alt="Logo" className="w-12" />
             </div>
-            <span className="text-xl font-bold text-primary-foreground">Aglora</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -38,9 +38,6 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10">
-              Log In
-            </Button>
             <Button className="bg-primary hover:bg-primary/90">
               Get Started
             </Button>
@@ -56,27 +53,30 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 border-t border-primary-foreground/10">
+
+        <div
+          className={`md:hidden absolute left-0 right-0 top-16 bg-forest z-40 h-[calc(100vh-4rem)] transition-transform duration-300 ease-in-out ${
+            isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="flex flex-col p-6 gap-4 h-full overflow-y-auto">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="block py-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                className="text-lg font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors py-3 border-b border-primary-foreground/10"
+                onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <div className="flex flex-col gap-2 mt-4">
-              <Button variant="ghost" className="text-primary-foreground/80 justify-start">
-                Log In
-              </Button>
-              <Button className="bg-primary hover:bg-primary/90">
+            <div className="mt-6">
+              <Button className="w-full bg-primary hover:bg-primary/90 text-lg py-6">
                 Get Started
               </Button>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
