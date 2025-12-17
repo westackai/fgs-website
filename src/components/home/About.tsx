@@ -1,4 +1,5 @@
 import farmersTeam from "@/assets/farmers-team.jpg";
+import Image from "next/image";
 
 const About = () => {
   const stats = [
@@ -48,8 +49,8 @@ const About = () => {
 
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img
-                src={farmersTeam.src}
+              <Image
+                src={farmersTeam}
                 alt="Our farming team"
                 className="w-full h-auto object-cover"
               />

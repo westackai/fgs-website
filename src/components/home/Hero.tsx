@@ -1,6 +1,9 @@
+"use client";
+
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-farm.jpg";
+import { motion, Variants } from "framer-motion";
 
 const Hero = () => {
   const stats = [
@@ -10,38 +13,68 @@ const Hero = () => {
     { icon: "🌍", label: "Eco Friendly" },
   ];
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center pt-24 md:pt-16">
-      <div
+    <section className="relative min-h-screen flex items-center pt-24 md:pt-16 overflow-hidden">
+      <motion.div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage.src})` }}
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 10, ease: "easeOut" }}
       />
       <div className="absolute inset-0 hero-gradient" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-2xl">
-          <span className="inline-block px-4 py-1.5 bg-primary/20 text-primary-foreground rounded-full text-sm font-medium mb-6 animate-fade-in">
+        <motion.div
+          className="max-w-2xl"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.span
+            variants={itemVariants}
+            className="inline-block px-4 py-1.5 bg-primary/20 text-primary-foreground rounded-full text-sm font-medium mb-6"
+          >
             🌾 Premium Quality Pulses Processing
-          </span>
+          </motion.span>
 
-          <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in"
-            style={{ animationDelay: "0.1s" }}
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6"
           >
             Empowering Indian Agriculture with High-Quality Pulses
-          </h1>
+          </motion.h1>
 
-          <p
-            className="text-lg text-primary-foreground/80 mb-8 animate-fade-in"
-            style={{ animationDelay: "0.2s" }}
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-primary-foreground/80 mb-8"
           >
             Fresh Grain and Spices delivers excellence in pulse processing,
             ensuring the finest quality for every grain that reaches your plate.
-          </p>
+          </motion.p>
 
-          <div
-            className="flex flex-wrap gap-4 mb-12 animate-fade-in"
-            style={{ animationDelay: "0.3s" }}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap gap-4 mb-12"
           >
             <Button
               size="lg"
@@ -56,12 +89,9 @@ const Hero = () => {
             >
               <Play size={18} /> Watch Video
             </Button>
-          </div>
+          </motion.div>
 
-          <div
-            className="flex flex-wrap gap-6 animate-fade-in"
-            style={{ animationDelay: "0.4s" }}
-          >
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-6">
             {stats.map((stat, index) => (
               <div
                 key={index}
@@ -71,8 +101,8 @@ const Hero = () => {
                 <span className="text-sm font-medium">{stat.label}</span>
               </div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

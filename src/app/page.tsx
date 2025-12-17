@@ -9,19 +9,34 @@ import Trademarks from "@/components/home/Trademarks";
 import Registrations from "@/components/home/Registrations";
 import Contact from "@/components/home/Contact";
 import Footer from "@/components/home/Footer";
+import FadeIn from "@/components/animations/FadeIn";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Services />
+      <FadeIn>
+        <About />
+      </FadeIn>
+      <FadeIn>
+        <Services />
+      </FadeIn>
       {/* <Projects /> */}
-      <Testimonials />
-      <Registrations />
-      <CTA />
-      <Contact />
-      <Trademarks />
+      <FadeIn>
+        <Testimonials />
+      </FadeIn>
+      <FadeIn>
+        <Registrations />
+      </FadeIn>
+      <FadeIn>
+        <CTA />
+      </FadeIn>
+      <FadeIn>
+        <Contact />
+      </FadeIn>
+      <FadeIn>
+        <Trademarks />
+      </FadeIn>
     </>
   );
 }

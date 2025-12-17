@@ -1,4 +1,5 @@
 import { Award, Users, Leaf, Zap } from "lucide-react";
+import Image from "next/image";
 import farmersTeam from "@/assets/farmers-team.jpg";
 
 const DependableServices = () => {
@@ -62,7 +63,7 @@ const DependableServices = () => {
 
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img
+              <Image
                 src={farmersTeam}
                 alt="Sustainable farming practices"
                 className="w-full h-auto object-cover"

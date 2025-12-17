@@ -1,4 +1,5 @@
 import { Settings, ShieldCheck, Leaf, BarChart } from "lucide-react";
+import Image from "next/image";
 import technologyImg from "@/assets/irrigation.jpg"; // Using existing image as placeholder
 
 const Technology = () => {
@@ -35,7 +36,7 @@ const Technology = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 relative">
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img
+              <Image
                 src={technologyImg}
                 alt="Modern Processing Technology"
                 className="w-full h-auto object-cover"

@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import greenhouseImg from "@/assets/greenhouse.jpg";
@@ -52,7 +53,7 @@ const Projects = () => {
               className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-border/50 bg-card"
             >
               <div className="relative h-48 overflow-hidden">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
